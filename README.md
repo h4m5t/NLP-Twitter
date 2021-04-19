@@ -1,6 +1,11 @@
 # NLP-Twitter
 
+### 参考
+
+推特URL链接说明
+
 ### 功能说明
+
 给出id/username，获取推文
 
 ### 过程
@@ -31,3 +36,4 @@
 * 需要openpyxl
 * 使用webdriver之前需要关闭chrome，防止user_data被占用
 * class标签
+* 推特对不同IP有不同的限制策略，有些需要登陆才可看见推文，有些不用。

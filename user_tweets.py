@@ -1,14 +1,11 @@
 # coding:utf-8
-
-
-
 import datetime as dt
 import re
 import time
 from urllib import parse
 
 import crawlertool as tool
-from Selenium4R import Chrome
+#from Selenium4R import Chrome
 
 
 class SpiderTwitterAccountPost(tool.abc.SingleSpider):
@@ -167,7 +164,8 @@ if __name__ == "__main__":
     
     #driver = Chrome(cache_path=r"E:\Temp")
     print(SpiderTwitterAccountPost(driver).running(
-        user_name=SpiderTwitterAccountPost.get_twitter_user_name("https://twitter.com/zaobaosg"),
+        user_name=SpiderTwitterAccountPost.get_twitter_user_name("https://twitter.com/InsiderNews"),
+        
         since_date=dt.date(2021, 3, 18),
         until_date=dt.date(2021, 3, 20)
     ))
