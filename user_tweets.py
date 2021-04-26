@@ -3,26 +3,21 @@ import datetime as dt
 import re
 import time
 from urllib import parse
-
 import crawlertool as tool
-#from Selenium4R import Chrome
-
 
 class SpiderTwitterAccountPost(tool.abc.SingleSpider):
     """
-    Twitter账号推文爬虫
+    Twitter爬虫
     """
 
     def __init__(self, driver):
         self.driver = driver
-
-        # 爬虫实例的变量
         self.user_name = None
 
     @staticmethod
     def get_twitter_user_name(page_url: str) -> str:
-        """提取Twitter的账号用户名称
-        主要用于从Twitter任意账号页的Url中提取账号用户名称
+        """
+        从URL提取用户名称
         :param page_url: Twitter任意账号页的Url
         :return: Twitter账号用户名称
         """
@@ -31,17 +26,15 @@ class SpiderTwitterAccountPost(tool.abc.SingleSpider):
 
     def running(self, user_name: str, since_date, until_date):
         """执行Twitter账号推文爬虫
-        :param user_name: Facebook账号主页名称（可以通过get_facebook_user_name获取）
+        :param user_name: 
         :param since_date: 抓取时间范围的右侧边界（最早日期）
         :param until_date: 抓取时间范围的左侧边界（最晚日期）
-        :return: 推文信息列表
+        :return: 推文信息-list
         """
-
         self.user_name = user_name
 
         item_list = []
 
-        # 生成请求的Url
         query_sentence = []
         query_sentence.append("from:%s" % user_name)  # 搜索目标用户发布的推文
         query_sentence.append("-filter:retweets")  # 过滤到所有转推的推文
@@ -143,28 +136,20 @@ class SpiderTwitterAccountPost(tool.abc.SingleSpider):
 from selenium import webdriver
 # ------------------- 单元测试 -------------------
 if __name__ == "__main__":
-    """获取cookie"""
-    # option = webdriver.ChromeOptions()
-    # option.add_argument(r"user-data-dir=C:\Users\loeoe\AppData\Local\Google\Chrome\User''Data")    # 浏览器路径
-    # option.add_argument("blink-settings=imagesEnabled=false")    # 不加载图片
+    """获取浏览器缓存，以便进行登录""" 
 
-    # # 初始化driver
-    
-
-    
-    # driver = webdriver.Chrome(executable_path=r"E:\\Temp\\drivers\\chromedriver\\win32\\89.0.4389.23\\chromedriver.exe",port=0,chrome_options=option)
-    
-
-
-
+    #初始化webdriver    
     driverOptions = webdriver.ChromeOptions()
-    driverOptions.add_argument(r"user-data-dir=C:\Users\loeoe\AppData\Local\Google\Chrome\User Data") 
 
+    #导入浏览器缓存，实现登录状态
+    driverOptions.add_argument(r"user-data-dir=C:\Users\loeoe\AppData\Local\Google\Chrome\User Data") 
+    #driverOptions.add_argument("blink-settings=imagesEnabled=false") 不加载图片，加快爬取速度
+
+    #webdriver路径
     driver = webdriver.Chrome(executable_path=r"E:\\Temp\\drivers\\chromedriver\\win32\\89.0.4389.23\\chromedriver.exe",port=0,chrome_options=driverOptions)
     
-    #driver = Chrome(cache_path=r"E:\Temp")
     print(SpiderTwitterAccountPost(driver).running(
-        user_name=SpiderTwitterAccountPost.get_twitter_user_name("https://twitter.com/InsiderNews"),
+        user_name=SpiderTwitterAccountPost.get_twitter_user_name("https://twitter.com/nasa"),
         
         since_date=dt.date(2021, 3, 18),
         until_date=dt.date(2021, 3, 20)
