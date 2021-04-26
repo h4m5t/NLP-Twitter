@@ -140,15 +140,15 @@ Introduce some ways to crawl Tweets for China Students so that they can do Scien
 
 ## 仓库说明
 
-1. generate_url.py 根据用户ID生成对应的url,保存在url.txt
+1. generate_url.py  根据用户ID生成对应的url,保存在url.txt
 
-2. test*.py用来测试相关爬虫库、代理设置、模拟浏览器操作
+2. test*.py  用来测试相关爬虫库、代理设置、模拟浏览器操作
 
-3. Twitter.csv为100个涉华人员的相关信息
+3. Twitter.csv  为100个涉华人员的相关信息
 
-4. user_info.py 爬取关注者被关注者数量
+4. user_info.py  爬取关注者被关注者数量
 
-5. user_tweets 爬取对应用户的推文
+5. user_tweets.py  爬取对应用户的推文
 
 
 
@@ -217,7 +217,7 @@ https://github.com/ChangxingJiang/CxSpider
 
 https://www.4008140202.com/pp/20191117124856_4774_3977640913/news
 
-[如何从推特挖掘情报（1）：一个流行工具的具体介绍 - iyouport (@iyouport)](https://matters.news/@iyouport/如何从推特挖掘情报-1-一个流行工具的具体介绍-bafyreidw6w2aee3i42o6y4jypw2vtfzxg5qpmhorltge5uxj3xkzh255zq)
+[如何从推特挖掘情报：一个流行工具的具体介绍 - iyouport (@iyouport)](https://matters.news/@iyouport/如何从推特挖掘情报-1-一个流行工具的具体介绍-bafyreidw6w2aee3i42o6y4jypw2vtfzxg5qpmhorltge5uxj3xkzh255zq)
 
 [CxSpider/Twitter_Account_Post.py at master · ChangxingJiang/CxSpider](https://github.com/ChangxingJiang/CxSpider)
 
