@@ -221,11 +221,11 @@ https://www.4008140202.com/pp/20191117124856_4774_3977640913/news
 
 [CxSpider/Twitter_Account_Post.py at master · ChangxingJiang/CxSpider](https://github.com/ChangxingJiang/CxSpider)
 
-[前言 - Docker —— 从入门到实践](https://yeasy.gitbook.io/docker_practice/)
+[Docker —— 从入门到实践](https://yeasy.gitbook.io/docker_practice/)
 
 [python selenium设置chrome浏览器保持登录方式_小王子博客-CSDN博客_selenium 保持登录](https://blog.csdn.net/weixin_43407092/article/details/97128833)
 
-[(01)selenium保留chrome配置及登陆 - 简书](https://www.jianshu.com/p/fc36a7e9aca8)
+[selenium保留chrome配置及登陆 - 简书](https://www.jianshu.com/p/fc36a7e9aca8)
 
 [selenium设置chrome浏览器保持登录方式两种options和cookie - 豌豆ip代理](https://www.wandouip.com/t5i225026/)
 
