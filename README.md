@@ -7,7 +7,7 @@
 
 > Twitter_spider for China.
 
-### 🏠 [Homepage](github.com/h4m5t/NLP-Twitter)
+### 🏠 [Homepage](https://github.com/h4m5t/NLP-Twitter)
 
 ## Author
 
