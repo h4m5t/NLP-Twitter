@@ -1,12 +1,9 @@
 # coding:utf-8
-
 import re
 import time
 from typing import List, Dict
-
 import crawlertool as tool
 from Selenium4R import Chrome
-
 
 class SpiderTwitterAccountInfo(tool.abc.SingleSpider):
     """
@@ -69,21 +66,17 @@ class SpiderTwitterAccountInfo(tool.abc.SingleSpider):
 from selenium import webdriver
 # ------------------- 单元测试 -------------------
 if __name__ == "__main__":
-    # driverOptions = webdriver.ChromeOptions()
-    # # r代表后面的字符串斜杠不转义，''表示python识别空格 
-    # driverOptions.add_argument(r"user-data-dir=C:\Users\loeoe\AppData\Local\Google\Chrome\User''Data\Default\Login''Data")
-    
-    #driver = Chrome(cache_path=r"E:\Temp")
-
-    driverOptions = webdriver.ChromeOptions()
-    driverOptions.add_argument(r"user-data-dir=C:\Users\loeoe\AppData\Local\Google\Chrome\User Data") 
-
-    
-
-
     
     # r代表后面的字符串斜杠不转义，''表示python识别空格
+    # driverOptions.add_argument(r"user-data-dir=C:\Users\loeoe\AppData\Local\Google\Chrome\User''Data\Default\Login''Data")
+    
+    #初始化webdriver
+    driverOptions = webdriver.ChromeOptions()
+    
+    #导入缓存数据
+    driverOptions.add_argument(r"user-data-dir=C:\Users\loeoe\AppData\Local\Google\Chrome\User Data") 
 
+    #对应的chromedriver路径
     driver = webdriver.Chrome(executable_path=r"E:\\Temp\\drivers\\chromedriver\\win32\\89.0.4389.23\\chromedriver.exe",port=0,chrome_options=driverOptions)
 
     print(SpiderTwitterAccountInfo(driver).running(SpiderTwitterAccountInfo.get_twitter_user_name("https://twitter.com/Doug_Bandow")))

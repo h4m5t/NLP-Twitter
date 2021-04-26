@@ -4,6 +4,7 @@ import re
 import time
 from urllib import parse
 import crawlertool as tool
+from selenium import webdriver
 
 class SpiderTwitterAccountPost(tool.abc.SingleSpider):
     """
@@ -133,8 +134,6 @@ class SpiderTwitterAccountPost(tool.abc.SingleSpider):
         return item_list
 
 
-from selenium import webdriver
-# ------------------- 单元测试 -------------------
 if __name__ == "__main__":
     """获取浏览器缓存，以便进行登录""" 
 
